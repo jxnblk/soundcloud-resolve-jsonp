@@ -1,0 +1,19 @@
+{
+  "name": "soundcloud-resolve-jsonp",
+  "version": "1.0.0",
+  "description": "Use the SoundCloud resolve endpoint with JSONP or Superagent",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "dependencies": {
+    "jsonp": "^0.2.0",
+    "qs": "^2.4.1",
+    "superagent": "^1.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.1"
+  }
+}
