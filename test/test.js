@@ -17,7 +17,7 @@ describe('soundcloud-resolve-jsonp', function() {
     assert.doesNotThrow(function() {
       resolve({ url: testTrack, client_id: client_id }, function(err, res) {
         if (err) throw err;
-        result = res.body;
+        result = res;
         done();
       });
     });

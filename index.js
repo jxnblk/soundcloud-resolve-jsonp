@@ -26,6 +26,7 @@ module.exports = function(params) {
     try {
       if (err) throw err;
       if (!err) {
+        res = JSON.parse(res.response) || res;
         callback(err, res);
       }
     } catch(e) {

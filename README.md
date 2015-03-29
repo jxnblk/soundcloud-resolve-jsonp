@@ -17,7 +17,7 @@ resolve({
   client_id: CLIENT_ID
   }, function(err, res) {
     if (err) { console.error(err) }
-    track = res.body;
+    track = res;
 });
 ```
 

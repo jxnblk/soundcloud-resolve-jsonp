@@ -21,7 +21,9 @@ module.exports = function(params) {
 
   var url = endpoint + '?' + qs.stringify(params);
 
-  request.get(url).end(callback);
+  request.get(url).end(function(err, res) {
+    callback(err, res.body);
+  });
 
 };
 
