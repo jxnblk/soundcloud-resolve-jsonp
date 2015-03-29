@@ -1,6 +1,6 @@
 
 var assert = require('assert');
-var resolve = require('..');
+var resolve = require('../node');
 var client_id = require('../config.json').client_id;
 
 var testTrack = 'http://soundcloud.com/jxnblk/let-go';

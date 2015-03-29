@@ -1,7 +1,7 @@
 
 var jsonp = require('jsonp');
-var request = require('superagent');
-var qs = require('qs');
+var corslite = require('corslite');
+var qs = require('query-string');
 
 var endpoint = 'https://api.soundcloud.com/resolve.json';
 
@@ -21,7 +21,7 @@ module.exports = function(params) {
 
   var url = endpoint + '?' + qs.stringify(params);
 
-  request.get(url).end(function(err, res) {
+  corslite(url, function(err, res) {
     try {
       if (err) throw err;
       if (!err) {
@@ -30,7 +30,7 @@ module.exports = function(params) {
     } catch(e) {
       jsonp(url, callback);
     }
-  })
+  }, true);
 
 };
 

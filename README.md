@@ -1,6 +1,6 @@
 # soundcloud-resolve-jsonp
 
-Use the SoundCloud resolve endpoing with JSONP or Superagent
+Use the SoundCloud API resolve endpoint with corslite and a JSONP fallback for Safari
 
 ## Getting Started
 
@@ -21,15 +21,14 @@ resolve({
 });
 ```
 
-## Options
+## Node environments
 
-Options can be passed as the second argument.
+For use within node, use the `node.js` version, which uses superagent.
 
 ```js
-resolve(params, { superagent: true }, callback);
+var resolve = require('soundcloud-resolve-jsonp/node');
 ```
 
-- `superagent` (boolean) - use superagent get method instead of JSONP
 
 ---
 
