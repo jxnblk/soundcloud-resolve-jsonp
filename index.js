@@ -1,7 +1,8 @@
 
-var jsonp = require('jsonp');
-var corslite = require('corslite');
 var qs = require('query-string');
+var corslite = require('corslite');
+var jsonp = require('browser-jsonp');
+
 
 var endpoint = 'https://api.soundcloud.com/resolve.json';
 
@@ -28,7 +29,15 @@ module.exports = function(params) {
         callback(err, res);
       }
     } catch(e) {
-      jsonp(url, callback);
+      jsonp({
+        url: url,
+        error: function(err) {
+          callback(err);
+        },
+        success: function(res) {
+          callback(null, res);
+        }
+      });
     }
   }, true);
 

@@ -9,8 +9,8 @@
   "author": "Brent Jackson",
   "license": "MIT",
   "dependencies": {
+    "browser-jsonp": "^1.0.8",
     "corslite": "0.0.6",
-    "jsonp": "^0.2.0",
     "query-string": "^1.0.0",
     "superagent": "^1.1.0"
   },
