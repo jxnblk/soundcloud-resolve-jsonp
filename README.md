@@ -14,7 +14,7 @@ var track;
 
 resolve({
   url: 'http://soundcloud.com/jxnblk/let-go',
-  client_ID: CLIENT_ID
+  client_id: CLIENT_ID
   }, function(err, res) {
     if (err) { console.error(err) }
     track = res.body;
