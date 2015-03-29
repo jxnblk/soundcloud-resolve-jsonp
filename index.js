@@ -19,16 +19,18 @@ module.exports = function(params) {
     callback = arguments[1];
   }
 
-
   var url = endpoint + '?' + qs.stringify(params);
 
-  if (typeof document !== 'undefined' && !options.superagent) {
-    jsonp(url, callback);
-  } else {
-    request
-      .get(url)
-      .end(callback);
-  }
+  request.get(url).end(function(err, res) {
+    try {
+      if (err) throw err;
+      if (!err) {
+        callback(err, res);
+      }
+    } catch(e) {
+      jsonp(url, callback);
+    }
+  })
 
 };
 
