@@ -1,11 +1,11 @@
 
 var assert = require('assert');
 var resolve = require('..');
-var scResolve = require('soundcloud-resolve');
 var client_id = require('../config.json').client_id;
 
 var testTrack = 'http://soundcloud.com/jxnblk/let-go';
 var result;
+
 
 describe('soundcloud-resolve-jsonp', function() {
 
@@ -35,9 +35,19 @@ describe('soundcloud-resolve-jsonp', function() {
     assert(result.stream_url);
   });
 
-  it('should support options object', function() {
+  it('should support options object', function(done) {
     assert.doesNotThrow(function() {
       resolve({ url: testTrack, client_id: client_id }, { superagent: true }, function(err, res) {
+        if (err) throw err;
+        done();
+      });
+    });
+  });
+
+  it('should support /user/likes', function(done) {
+    var url = 'http://soundcloud.com/jxnblk/likes';
+    assert.doesNotThrow(function() {
+      resolve({ url: url, client_id: client_id }, function(err, res) {
         if (err) throw err;
         done();
       });
