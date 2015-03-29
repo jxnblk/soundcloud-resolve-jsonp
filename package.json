@@ -1,6 +1,6 @@
 {
   "name": "soundcloud-resolve-jsonp",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Use the SoundCloud resolve endpoint with JSONP or Superagent",
   "main": "index.js",
   "scripts": {
